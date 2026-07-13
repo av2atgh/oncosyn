@@ -39,3 +39,9 @@ report_2026/cover_letter.pdf
 
 # --- local Claude settings ---
 .claude/settings.local.json
+
+# --- MDPI LaTeX template (download from https://www.mdpi.com/authors/latex) ---
+report_2026/Definitions/
+*.bcf
+*.run.xml
+*.spl
