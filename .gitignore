@@ -45,3 +45,4 @@ report_2026/Definitions/
 *.bcf
 *.run.xml
 *.spl
+report_2026/*.zip

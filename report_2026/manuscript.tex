@@ -6,7 +6,6 @@
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric,arrows.meta,positioning}
 \usepackage{booktabs}
-\usepackage{longtable}
 \usepackage{tabularx}
 \usepackage{siunitx}
 
@@ -19,6 +18,17 @@
 \providecommand{\dataavailability}[1]{\vspace{6pt}\noindent\textbf{Data Availability Statement:} #1\par}
 \providecommand{\institutionalreview}[1]{\vspace{6pt}\noindent\textbf{Institutional Review Board Statement:} #1\par}
 \providecommand{\informedconsent}[1]{\vspace{6pt}\noindent\textbf{Informed Consent Statement:} #1\par}
+
+% Journal metadata (filled by the MDPI editorial office; placeholders for submission)
+\pubvolume{1}
+\issuenum{1}
+\articlenumber{0}
+\pubyear{2026}
+\copyrightyear{2026}
+\datereceived{ }
+\daterevised{ }
+\dateaccepted{ }
+\datepublished{ }
 
 \tikzset{
   box/.style={rectangle,draw,rounded corners,align=center,inner sep=6pt,
@@ -226,7 +236,7 @@ containing at least one targeted agent.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.72\linewidth]{figures/orr_over_time.png}
+\includegraphics[width=0.72\linewidth]{orr_over_time.png}
 \caption{Objective response rate versus trial completion year for Phase~II and
 Phase~III arms, with per-phase linear fits. Each point is a treatment arm.\label{fig:time}}
 \end{figure}
@@ -351,7 +361,7 @@ Medium confidence (line unknown)  &  96 & 0.30 & 0.11 & 0.37 \\
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.62\linewidth]{figures/agreement_scatter.png}
+\includegraphics[width=0.62\linewidth]{agreement_scatter.png}
 \caption{Phase~II ORR estimate versus Phase~III observed ORR for the \num{157}
 matched pairs. The dashed line is the identity; the solid line is the fitted
 calibration (slope $0.42$), whose shallow slope reflects regression to the mean.\label{fig:scatter}}
@@ -359,7 +369,7 @@ calibration (slope $0.42$), whose shallow slope reflects regression to the mean.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.62\linewidth]{figures/bland_altman.png}
+\includegraphics[width=0.62\linewidth]{bland_altman.png}
 \caption{Bland--Altman plot of the Phase~II$-$Phase~III ORR difference against the
 pair mean. The central line is the mean bias; dashed lines are the
 \SI{95}{\percent} limits of agreement.\label{fig:ba}}
@@ -383,14 +393,14 @@ variance in median survival.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.72\linewidth]{figures/survival_over_time.png}
+\includegraphics[width=0.72\linewidth]{survival_over_time.png}
 \caption{Median overall and progression-free survival (months) versus trial
 completion year, with per-endpoint linear fits. Each point is a treatment arm.\label{fig:survtime}}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.62\linewidth]{figures/orr_vs_survival.png}
+\includegraphics[width=0.62\linewidth]{orr_vs_survival.png}
 \caption{Arm-level median overall and progression-free survival (months) versus
 objective response rate, with linear fits. Higher ORR is associated with longer
 survival, more strongly for PFS than OS.\label{fig:orrsurv}}
@@ -469,10 +479,11 @@ endpoints rather than as a stand-alone surrogate.
 
 \vspace{6pt}
 
-\supplementary{The following supporting information can be downloaded at:
-\url{https://github.com/av2atgh/oncosyn}. Table S1: all synergistic combinations;
-Table S2: all antagonistic combinations (combinations new to this study are marked
-with an asterisk).}
+\supplementary{The following supporting information can be downloaded at the
+journal website: \texttt{supplementary\_tables.xlsx}, containing Table~S1 (all
+synergistic combinations) and Table~S2 (all antagonistic combinations); in both,
+combinations new to this study relative to earlier surveys are flagged in the
+``New'' column.}
 
 \authorcontributions{Conceptualization, A.V.; methodology, A.V.; software, A.V.;
 formal analysis, A.V.; data curation, A.V.; writing---original draft preparation,
@@ -505,11 +516,5 @@ data; in the writing of the manuscript; or in the decision to publish the result
 \reftitle{References}
 \externalbibliography{yes}
 \bibliography{bibliography}
-
-\clearpage
-\section*{Supplementary Tables}
-\setcounter{table}{0}
-\renewcommand{\thetable}{S\arabic{table}}
-\input{supp_tables.tex}
 
 \end{document}

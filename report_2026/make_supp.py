@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Generate supp_tables.tex: longtables of every synergistic / antagonistic
-combination, read from the phase2 analysis database. Reproducible: rerun after
-the pipeline to refresh the supplement.
+"""Generate supplementary_tables.xlsx: every synergistic (Table S1) and
+antagonistic (Table S2) combination, read from the analysis database. Reproducible:
+rerun after the pipeline to refresh the supplement.
 
     python make_supp.py
 """
@@ -10,14 +10,16 @@ from __future__ import annotations
 import sqlite3
 from pathlib import Path
 
-DB = Path(__file__).resolve().parent.parent / "data" / "processed" / "phase2.db"
-OUT = Path(__file__).resolve().parent / "supp_tables.tex"
+from openpyxl import Workbook
+from openpyxl.styles import Alignment, Font
+from openpyxl.utils import get_column_letter
 
-_ESC = {"&": r"\&", "%": r"\%", "_": " ", "#": r"\#", "$": r"\$"}
+DB = Path(__file__).resolve().parent.parent / "data" / "processed" / "phase2.db"
+OUT = Path(__file__).resolve().parent / "supplementary_tables.xlsx"
 
 # Combinations previously reported (canonical lowercase names), by interaction
-# class, in Kang et al. 2013 and Azam & Vazquez 2021. A row in our tables is
-# flagged new (*) if its agent set is not among these for the same class.
+# class, in Kang et al. 2013 and Azam & Vazquez 2021. A row is flagged "New" if
+# its agent set is not among these for the same class.
 _PREV_SYN = {frozenset(s) for s in [
     # Kang 2013 (Table 1)
     ("docetaxel", "doxorubicin"), ("oxaliplatin", "fluorouracil"),
@@ -52,15 +54,16 @@ _PREV_ANT = {frozenset(s) for s in [
     ("irinotecan", "cetuximab"), ("folfoxiri", "cetuximab"),
 ]}
 
-
-def esc(s: str) -> str:
-    return "".join(_ESC.get(c, c) for c in (s or ""))
+HEADER = ["Combination", "Tumour", "Expected ORR (%)", "Observed ORR (%)",
+          "Adjusted p-value", "New"]
+_NOTE = ('"New" = combination not reported in this interaction class by '
+         "Kang et al. (2013) or Azam & Vazquez (2021).")
 
 
 def fmt_p(p) -> str:
     if p is None:
-        return "--"
-    return "$<0.001$" if p < 1e-3 else f"{p:.3f}"
+        return "n/a"
+    return "<0.001" if p < 1e-3 else f"{p:.3f}"
 
 
 def rows_for(conn, interaction):
@@ -82,37 +85,35 @@ def rows_for(conn, interaction):
     for e, o, p, tum, combo in q:
         parts = [x for x in (combo or "").split("|") if x]
         agents = " + ".join(sorted(parts))
-        key = (agents, tum, round(e, 3), round(o, 3))
+        tumour = (tum or "").replace("_", " ")
+        key = (agents, tumour, round(e, 3), round(o, 3))
         if key in seen:
             continue          # collapse exact-duplicate display rows
         seen.add(key)
         is_new = frozenset(x.lower() for x in parts) not in prev
         n_new += is_new
-        disp = esc(agents) + ("$^{*}$" if is_new else "")
-        out.append((disp, esc(tum), round(100 * e), round(100 * o), fmt_p(p)))
+        out.append([agents, tumour, round(100 * e), round(100 * o),
+                    fmt_p(p), "Yes" if is_new else "No"])
     return out, n_new
 
 
-def longtable(rows, label, caption):
-    head = (
-        "\\begin{footnotesize}\n"
-        f"\\begin{{longtable}}{{p{{6.2cm}}p{{3.0cm}}rrr}}\n"
-        f"\\caption{{{caption}}}\\label{{{label}}}\\\\\n"
-        "\\toprule\nCombination & Tumour & Exp. & Obs. & Adj. $p$ \\\\\n\\midrule\n"
-        "\\endfirsthead\n"
-        "\\multicolumn{5}{l}{\\footnotesize\\itshape continued from previous page}\\\\\n"
-        "\\toprule\nCombination & Tumour & Exp. & Obs. & Adj. $p$ \\\\\n\\midrule\n"
-        "\\endhead\n"
-        "\\midrule\\multicolumn{5}{r}{\\footnotesize\\itshape continued on next page}\\\\\n"
-        "\\endfoot\n\\bottomrule\n\\endlastfoot\n"
-    )
-    body = "".join(
-        f"{a} & {t} & {e}\\% & {o}\\% & {p} \\\\\n" for a, t, e, o, p in rows)
-    return head + body + "\\end{longtable}\n\\end{footnotesize}\n"
-
-
-_NOTE = ("Combinations marked $^{*}$ were not reported in this interaction class "
-         "by Kang et al.\\ (2013) or Azam \\& Vazquez (2021).")
+def write_sheet(ws, title, rows):
+    ws.title = title
+    ws.append(HEADER)
+    for r in rows:
+        ws.append(r)
+    for cell in ws[1]:                       # bold header
+        cell.font = Font(bold=True)
+        cell.alignment = Alignment(horizontal="center")
+    ws.freeze_panes = "A2"
+    ws.auto_filter.ref = f"A1:{get_column_letter(len(HEADER))}{len(rows) + 1}"
+    for col, w in zip("ABCDEF", (34, 22, 15, 15, 14, 6)):
+        ws.column_dimensions[col].width = w
+    for c in ("C", "D", "E", "F"):           # centre the numeric/flag columns
+        for cell in ws[c]:
+            cell.alignment = Alignment(horizontal="center")
+    ws.append([])
+    ws.append([_NOTE])
 
 
 def main():
@@ -120,21 +121,13 @@ def main():
     syn, syn_new = rows_for(conn, "synergy")
     ant, ant_new = rows_for(conn, "antagonism")
     conn.close()
-    text = (
-        "% Auto-generated by make_supp.py -- do not edit by hand.\n"
-        + longtable(syn, "tab:S1",
-                    f"All synergistic combinations ($n={len(syn)}$): observed ORR "
-                    "significantly above the Bliss-independence expectation "
-                    f"(Bonferroni-adjusted). {_NOTE} Exp., expected ORR; Obs., observed ORR.")
-        + "\n\\clearpage\n"
-        + longtable(ant, "tab:S2",
-                    f"All antagonistic combinations ($n={len(ant)}$): observed ORR "
-                    "significantly below the Bliss-independence expectation "
-                    f"(Bonferroni-adjusted). {_NOTE} Exp., expected ORR; Obs., observed ORR.")
-    )
-    OUT.write_text(text)
-    print(f"wrote {OUT.name}: {len(syn)} synergistic ({syn_new} new), "
-          f"{len(ant)} antagonistic ({ant_new} new) rows")
+
+    wb = Workbook()
+    write_sheet(wb.active, "Table S1 Synergistic", syn)
+    write_sheet(wb.create_sheet(), "Table S2 Antagonistic", ant)
+    wb.save(OUT)
+    print(f"wrote {OUT.name}: Table S1 {len(syn)} synergistic ({syn_new} new), "
+          f"Table S2 {len(ant)} antagonistic ({ant_new} new)")
 
 
 if __name__ == "__main__":
