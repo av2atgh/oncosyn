@@ -1,0 +1,41 @@
+# --- data artifacts (keep dir skeleton via .gitkeep) ---
+data/raw/*
+data/interim/*
+data/processed/*
+!data/**/.gitkeep
+
+# --- generated reports ---
+reports/*.csv
+reports/*.html
+reports/figures/*
+!reports/figures/.gitkeep
+
+# --- python ---
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+.venv/
+
+# --- LaTeX auxiliary files ---
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb
+
+# --- cover letter (kept out of the public repo) ---
+report_2026/cover_letter.tex
+report_2026/cover_letter.pdf
+
+# --- local Claude settings ---
+.claude/settings.local.json

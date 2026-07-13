@@ -1,0 +1,286 @@
+{
+ "protocolSection": {
+  "identificationModule": {
+   "nctId": "NCT02878057",
+   "briefTitle": "Multicenter Phase II Study of Apatinib in Patients With Advanced Breast Cancer(CABC006)"
+  },
+  "statusModule": {
+   "completionDateStruct": {
+    "date": "2020-09-02",
+    "type": "ACTUAL"
+   },
+   "primaryCompletionDateStruct": {
+    "date": "2020-09-02",
+    "type": "ACTUAL"
+   }
+  },
+  "conditionsModule": {
+   "conditions": [
+    "Breast Cancer"
+   ],
+   "keywords": [
+    "Apatinib",
+    "HER-2 Negative",
+    "Chest wall Metastasis",
+    "Multicenter Phase II Study",
+    "Breast cancer"
+   ]
+  },
+  "designModule": {
+   "phases": [
+    "PHASE2"
+   ],
+   "enrollmentInfo": {
+    "count": 30,
+    "type": "ACTUAL"
+   }
+  },
+  "armsInterventionsModule": {
+   "armGroups": [
+    {
+     "label": "Advanced Breast Cancer",
+     "type": "EXPERIMENTAL",
+     "description": "Patients With HER-2 Negative Advanced Breast Cancer With Chest Wall Metastasis; Dosing regimen: apatinib tablets: 500 mg, Po, QD; 4 weeks as a cycle, continuous treatment until disease progression, death or intolerable toxicity (giving endocrine therapy simultaneously if hormone receptor positive)",
+     "interventionNames": [
+      "Drug: Apatinib"
+     ]
+    }
+   ],
+   "interventions": [
+    {
+     "type": "DRUG",
+     "name": "Apatinib",
+     "description": "Dosing regimen: apatinib tablets: 500 mg, Po, QD; 4 weeks as a cycle, continuous treatment until disease progression, death or intolerable toxicity (giving endocrine therapy simultaneously if hormone receptor positive)",
+     "armGroupLabels": [
+      "Advanced Breast Cancer"
+     ],
+     "otherNames": [
+      "Apatinib Mesylate Tablets"
+     ]
+    }
+   ]
+  }
+ },
+ "resultsSection": {
+  "outcomeMeasuresModule": {
+   "outcomeMeasures": [
+    {
+     "type": "PRIMARY",
+     "title": "Progression-free Survival",
+     "description": "Progression is defined using Response Evaluation Criteria In Solid Tumors Criteria (RECIST v1.0), as a 20% increase in the sum of the longest diameter of target lesions, or a measurable increase in a non-target lesion, or the appearance of new lesions.",
+     "reportingStatus": "POSTED",
+     "paramType": "MEDIAN",
+     "dispersionType": "95% Confidence Interval",
+     "unitOfMeasure": "months",
+     "timeFrame": "evaluation per 2 cycles (8 weeks), up to 6 months;From date of randomization until the date of first documented progression or date of death from any cause, whichever came first, assessed up to 6 months",
+     "groups": [
+      {
+       "id": "OG000",
+       "title": "Advanced Breast Cancer",
+       "description": "Patients With HER-2 Negative Advanced Breast Cancer With Chest Wall Metastasis; Dosing regimen: apatinib tablets: 500 mg, Po, QD; 4 weeks as a cycle, continuous treatment until disease progression, death or intolerable toxicity (giving endocrine therapy simultaneously if hormone receptor positive)\n\nApatinib: Dosing regimen: apatinib tablets: 500 mg, Po, QD; 4 weeks as a cycle, continuous treatment until disease progression, death or intolerable toxicity (giving endocrine therapy simultaneously if hormone receptor positive)"
+      }
+     ],
+     "denoms": [
+      {
+       "units": "Participants",
+       "counts": [
+        {
+         "groupId": "OG000",
+         "value": "26"
+        }
+       ]
+      }
+     ],
+     "classes": [
+      {
+       "categories": [
+        {
+         "measurements": [
+          {
+           "groupId": "OG000",
+           "value": "4.9",
+           "lowerLimit": "2.1",
+           "upperLimit": "8.3"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "PRIMARY",
+     "title": "Overall Survival",
+     "description": "survival from first dose to death or last follow up",
+     "populationDescription": "Patients With HER-2 Negative Advanced Breast Cancer With Chest Wall Metastasis;",
+     "reportingStatus": "POSTED",
+     "paramType": "MEDIAN",
+     "dispersionType": "Full Range",
+     "unitOfMeasure": "months",
+     "timeFrame": "evaluation per 2 cycles (8 weeks), up to 55 months",
+     "groups": [
+      {
+       "id": "OG000",
+       "title": "Advanced Breast Cancer",
+       "description": "Patients With HER-2 Negative Advanced Breast Cancer With Chest Wall Metastasis; Dosing regimen: apatinib tablets: 500 mg, Po, QD; 4 weeks as a cycle, continuous treatment until disease progression, death or intolerable toxicity (giving endocrine therapy simultaneously if hormone receptor positive)\n\nApatinib: Dosing regimen: apatinib tablets: 500 mg, Po, QD; 4 weeks as a cycle, continuous treatment until disease progression, death or intolerable toxicity (giving endocrine therapy simultaneously if hormone receptor positive)"
+      }
+     ],
+     "denoms": [
+      {
+       "units": "Participants",
+       "counts": [
+        {
+         "groupId": "OG000",
+         "value": "26"
+        }
+       ]
+      }
+     ],
+     "classes": [
+      {
+       "categories": [
+        {
+         "measurements": [
+          {
+           "groupId": "OG000",
+           "value": "18",
+           "lowerLimit": "3",
+           "upperLimit": "55"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "SECONDARY",
+     "title": "Objective Response Rate",
+     "description": "Per Response Evaluation Criteria In Solid Tumors Criteria (RECIST v1.0) for target lesions and assessed by MRI: Complete Response (CR), Disappearance of all target lesions; Partial Response (PR), \\>=30% decrease in the sum of the longest diameter of target lesions; Objective response rate = CR + PR.",
+     "populationDescription": "Patients With HER-2 Negative Advanced Breast Cancer With Chest Wall Metastasis;",
+     "reportingStatus": "POSTED",
+     "paramType": "COUNT_OF_PARTICIPANTS",
+     "unitOfMeasure": "Participants",
+     "timeFrame": "evaluation per 2 cycles (8 weeks), up to 55 months",
+     "groups": [
+      {
+       "id": "OG000",
+       "title": "Advanced Breast Cancer",
+       "description": "Patients With HER-2 Negative Advanced Breast Cancer With Chest Wall Metastasis; Dosing regimen: apatinib tablets: 500 mg, Po, QD; 4 weeks as a cycle, continuous treatment until disease progression, death or intolerable toxicity (giving endocrine therapy simultaneously if hormone receptor positive)\n\nApatinib: Dosing regimen: apatinib tablets: 500 mg, Po, QD; 4 weeks as a cycle, continuous treatment until disease progression, death or intolerable toxicity (giving endocrine therapy simultaneously if hormone receptor positive)"
+      }
+     ],
+     "denoms": [
+      {
+       "units": "Participants",
+       "counts": [
+        {
+         "groupId": "OG000",
+         "value": "26"
+        }
+       ]
+      }
+     ],
+     "classes": [
+      {
+       "categories": [
+        {
+         "measurements": [
+          {
+           "groupId": "OG000",
+           "value": "11"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "SECONDARY",
+     "title": "Disease Control Rate",
+     "description": "Per Response Evaluation Criteria In Solid Tumors Criteria (RECIST v1.0) for target lesions and assessed by MRI: Complete Response (CR), Disappearance of all target lesions; Partial Response (PR), \\>=30% decrease in the sum of the longest diameter of target lesions; Progression Disease (PD), \\>=20% increase in the sum of the longest diameter of target lesions or appearance of new lesions; Stable Disease (SD), between PR and PD.\n\nDisease control rate (DCR) = CR + PR + SD.",
+     "populationDescription": "Patients With HER-2 Negative Advanced Breast Cancer With Chest Wall Metastasis;",
+     "reportingStatus": "POSTED",
+     "paramType": "COUNT_OF_PARTICIPANTS",
+     "unitOfMeasure": "Participants",
+     "timeFrame": "evaluation per 2 cycles (8 weeks), up to 55 months",
+     "groups": [
+      {
+       "id": "OG000",
+       "title": "Advanced Breast Cancer",
+       "description": "Patients With HER-2 Negative Advanced Breast Cancer With Chest Wall Metastasis; Dosing regimen: apatinib tablets: 500 mg, Po, QD; 4 weeks as a cycle, continuous treatment until disease progression, death or intolerable toxicity (giving endocrine therapy simultaneously if hormone receptor positive)\n\nApatinib: Dosing regimen: apatinib tablets: 500 mg, Po, QD; 4 weeks as a cycle, continuous treatment until disease progression, death or intolerable toxicity (giving endocrine therapy simultaneously if hormone receptor positive)"
+      }
+     ],
+     "denoms": [
+      {
+       "units": "Participants",
+       "counts": [
+        {
+         "groupId": "OG000",
+         "value": "26"
+        }
+       ]
+      }
+     ],
+     "classes": [
+      {
+       "categories": [
+        {
+         "measurements": [
+          {
+           "groupId": "OG000",
+           "value": "20"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "SECONDARY",
+     "title": "Number of Participants With Adverse Events",
+     "description": "all kind of adverse events, including hypertension, proteinuria, nausea, fatigue, and bilirubin increase.",
+     "populationDescription": "Patients With HER-2 Negative Advanced Breast Cancer With Chest Wall Metastasis",
+     "reportingStatus": "POSTED",
+     "paramType": "COUNT_OF_PARTICIPANTS",
+     "unitOfMeasure": "Participants",
+     "timeFrame": "evaluation per 2 cycles (8 weeks), up to 55 months",
+     "groups": [
+      {
+       "id": "OG000",
+       "title": "Advanced Breast Cancer",
+       "description": "Patients With HER-2 Negative Advanced Breast Cancer With Chest Wall Metastasis; Dosing regimen: apatinib tablets: 500 mg, Po, QD; 4 weeks as a cycle, continuous treatment until disease progression, death or intolerable toxicity (giving endocrine therapy simultaneously if hormone receptor positive)\n\nApatinib: Dosing regimen: apatinib tablets: 500 mg, Po, QD; 4 weeks as a cycle, continuous treatment until disease progression, death or intolerable toxicity (giving endocrine therapy simultaneously if hormone receptor positive)"
+      }
+     ],
+     "denoms": [
+      {
+       "units": "Participants",
+       "counts": [
+        {
+         "groupId": "OG000",
+         "value": "30"
+        }
+       ]
+      }
+     ],
+     "classes": [
+      {
+       "categories": [
+        {
+         "measurements": [
+          {
+           "groupId": "OG000",
+           "value": "15"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "hasResults": true
+}

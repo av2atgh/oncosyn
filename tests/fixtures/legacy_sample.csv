@@ -1,0 +1,4 @@
+trial_ref,nct_id,phase,tumor_type,line_of_therapy,year,arm_label,agents,doses,n_subjects,orr,cr,pr,response_criteria
+PMID:15774776,,II,myeloma,mixed,2005,experimental,bortezomib|thalidomide,1.3 mg/m2|100 mg,22,100,20,80,RECIST1.1
+PMID:19001001,NCT00001234,II,lung_nsclc,1L,2010,,gemcitabine,,45,26.7,,,
+PMID:20002002,,III,breast,2L,2014,control,paclitaxel,,180,31,,,WHO

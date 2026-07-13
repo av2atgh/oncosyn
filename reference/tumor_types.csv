@@ -1,0 +1,51 @@
+alias,tumor_type
+multiple myeloma,myeloma
+myeloma,myeloma
+mm,myeloma
+nsclc,lung_nsclc
+non-small cell lung cancer,lung_nsclc
+non-small-cell lung cancer,lung_nsclc
+lung_nsclc,lung_nsclc
+sclc,lung_sclc
+small cell lung cancer,lung_sclc
+lung_sclc,lung_sclc
+breast cancer,breast
+breast,breast
+crc,colorectal
+colorectal cancer,colorectal
+colorectal,colorectal
+prostate cancer,prostate
+prostate,prostate
+ovarian cancer,ovarian
+ovarian,ovarian
+pancreatic cancer,pancreatic
+pancreatic,pancreatic
+gastric cancer,gastric
+gastric,gastric
+hcc,hepatocellular
+hepatocellular carcinoma,hepatocellular
+hepatocellular,hepatocellular
+bladder cancer,bladder
+urothelial carcinoma,bladder
+bladder,bladder
+rcc,renal
+renal cell carcinoma,renal
+renal,renal
+head and neck,head_neck
+hnscc,head_neck
+head_neck,head_neck
+melanoma,melanoma
+glioblastoma,glioma
+gbm,glioma
+glioma,glioma
+aml,leukemia_aml
+acute myeloid leukemia,leukemia_aml
+all,leukemia_all
+acute lymphoblastic leukemia,leukemia_all
+cll,leukemia_cll
+chronic lymphocytic leukemia,leukemia_cll
+cml,leukemia_cml
+hodgkin lymphoma,lymphoma_hodgkin
+non-hodgkin lymphoma,lymphoma_nhl
+nhl,lymphoma_nhl
+dlbcl,lymphoma_nhl

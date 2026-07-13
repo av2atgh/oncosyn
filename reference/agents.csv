@@ -1,0 +1,123 @@
+name,synonyms,drug_class,target
+bortezomib,velcade,proteasome_inhibitor,proteasome
+carfilzomib,kyprolis,proteasome_inhibitor,proteasome
+ixazomib,ninlaro|mln9708,proteasome_inhibitor,proteasome
+thalidomide,,other,
+lenalidomide,revlimid|cc-5013,other,
+pomalidomide,pomalyst,other,
+dexamethasone,,steroid,
+prednisone,prednisolone,steroid,
+gemcitabine,gemzar,cytotoxic,
+paclitaxel,taxol,cytotoxic,
+nab-paclitaxel,abraxane|abi-007|nab paclitaxel,cytotoxic,
+docetaxel,taxotere,cytotoxic,
+cabazitaxel,jevtana,cytotoxic,
+cisplatin,cddp,cytotoxic,
+carboplatin,,cytotoxic,
+oxaliplatin,,cytotoxic,
+doxorubicin,adriamycin,cytotoxic,
+liposomal doxorubicin,pegylated liposomal doxorubicin|pegylated liposomal doxorubicin hydrochloride|doxil|caelyx,cytotoxic,
+aldoxorubicin,,cytotoxic,
+amrubicin,amrubicin hydrochloride,cytotoxic,
+cyclophosphamide,,cytotoxic,
+fluorouracil,5-fu|5fu|5-fluorouracil,cytotoxic,
+capecitabine,xeloda,cytotoxic,
+pemetrexed,alimta,cytotoxic,
+pralatrexate,folotyn,cytotoxic,
+irinotecan,,cytotoxic,
+topotecan,hycamtin,cytotoxic,
+etoposide,,cytotoxic,
+vincristine,,cytotoxic,
+vinorelbine,navelbine,cytotoxic,
+vinflunine,javlor,cytotoxic,
+eribulin,halaven|eribulin mesylate,cytotoxic,
+dacarbazine,dtic,cytotoxic,
+bendamustine,treanda,cytotoxic,
+clofarabine,clolar,cytotoxic,
+vosaroxin,voreloxin,cytotoxic,
+lurbinectedin,pm01183|zepzelca,cytotoxic,RNA-Pol-II
+azacitidine,vidaza,other,DNMT
+pnt2258,,other,BCL2
+guadecitabine,sgi-110,other,DNMT
+rituximab,rituxan|mabthera,mAb,CD20
+ofatumumab,arzerra,mAb,CD20
+obinutuzumab,gazyva,mAb,CD20
+trastuzumab,herceptin,mAb,HER2
+pertuzumab,perjeta,mAb,HER2
+bevacizumab,avastin,mAb,VEGF
+ramucirumab,cyramza,mAb,VEGFR2
+cetuximab,erbitux,mAb,EGFR
+panitumumab,vectibix,mAb,EGFR
+necitumumab,portrazza,mAb,EGFR
+daratumumab,darzalex,mAb,CD38
+elotuzumab,empliciti,mAb,SLAMF7
+cixutumumab,,mAb,IGF-1R
+andecaliximab,,mAb,MMP9
+brentuximab vedotin,adcetris|brentuximab,mAb,CD30
+tafasitamab,monjuvi|mor00208|xmab5574,mAb,CD19
+pembrolizumab,keytruda|mk-3475,checkpoint_inhibitor,PD-1
+nivolumab,opdivo,checkpoint_inhibitor,PD-1
+atezolizumab,tecentriq,checkpoint_inhibitor,PD-L1
+durvalumab,imfinzi|medi4736,checkpoint_inhibitor,PD-L1
+avelumab,bavencio,checkpoint_inhibitor,PD-L1
+ipilimumab,yervoy,checkpoint_inhibitor,CTLA-4
+tremelimumab,,checkpoint_inhibitor,CTLA-4
+ibrutinib,imbruvica,kinase_inhibitor,BTK
+erlotinib,tarceva,kinase_inhibitor,EGFR
+gefitinib,iressa,kinase_inhibitor,EGFR
+dacomitinib,vizimpro,kinase_inhibitor,EGFR
+lapatinib,tykerb|lapatinib ditosylate,kinase_inhibitor,HER2
+imatinib,gleevec|glivec,kinase_inhibitor,BCR-ABL
+dasatinib,sprycel,kinase_inhibitor,BCR-ABL
+nilotinib,tasigna,kinase_inhibitor,BCR-ABL
+sunitinib,sutent|su011248|su11248|sunitinib malate,kinase_inhibitor,VEGFR
+sorafenib,nexavar,kinase_inhibitor,VEGFR
+pazopanib,votrient,kinase_inhibitor,VEGFR
+regorafenib,stivarga,kinase_inhibitor,VEGFR
+lenvatinib,lenvima,kinase_inhibitor,VEGFR
+apatinib,rivoceranib,kinase_inhibitor,VEGFR
+cediranib,recentin|azd2171|cediranib maleate,kinase_inhibitor,VEGFR
+fruquintinib,elunate,kinase_inhibitor,VEGFR
+vandetanib,caprelsa|zd6474,kinase_inhibitor,VEGFR
+cabozantinib,cometriq|cabometyx,kinase_inhibitor,MET
+foretinib,gsk1363089|xl880,kinase_inhibitor,MET
+saracatinib,azd0530,kinase_inhibitor,SRC
+dabrafenib,tafinlar,kinase_inhibitor,BRAF
+trametinib,mekinist,kinase_inhibitor,MEK
+everolimus,afinitor|rad001,kinase_inhibitor,mTOR
+temsirolimus,torisel,kinase_inhibitor,mTOR
+idelalisib,zydelig,kinase_inhibitor,PI3K
+buparlisib,bkm120,kinase_inhibitor,PI3K
+px-866,sonolisib,kinase_inhibitor,PI3K
+afuresertib,gsk2110183,kinase_inhibitor,AKT
+tamoxifen,,hormonal,ER
+fulvestrant,faslodex,hormonal,ER
+letrozole,femara,hormonal,aromatase
+anastrozole,arimidex,hormonal,aromatase
+exemestane,aromasin,hormonal,aromatase
+abiraterone,zytiga,hormonal,CYP17
+enzalutamide,xtandi,hormonal,AR
+bicalutamide,casodex,hormonal,AR
+nilutamide,nilandron,hormonal,AR
+goserelin,zoladex,hormonal,LHRH
+leuprolide,lupron,hormonal,LHRH
+degarelix,firmagon,hormonal,GnRH
+octreotide,sandostatin|depot octreotide,hormonal,somatostatin
+vismodegib,erivedge,other,SMO
+panobinostat,farydak|lbh589,other,HDAC
+entinostat,,other,HDAC
+vorinostat,zolinza,other,HDAC
+tasquinimod,,other,S100A9
+zibotentan,zd4054,other,endothelin
+efatutazone,cs-7017,other,PPARG
+ro4929097,,other,NOTCH
+aflibercept,zaltrap|ziv-aflibercept,other,VEGF
+mipsagargin,g-202,other,PSMA
+aldesleukin,il-2|hd il2|high-dose il-2,other,IL2
+interferon alfa,hdi|high-dose interferon,other,
+sargramostim,gm-csf,other,
+leucovorin,folinic acid,other,
+folic acid,,other,
+radiation therapy,radiotherapy|chemoradiation|radiation,radiation,
+surgery,resection|complete resection,surgery,
+placebo,,other,

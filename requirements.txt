@@ -1,0 +1,8 @@
+# Phase2 — runtime dependencies
+pandas>=2.2
+numpy>=1.26
+scipy>=1.13          # beta posterior, t-tests, KS
+statsmodels>=0.14    # regression, calibration, Bland-Altman helpers
+pyyaml>=6.0          # config.yaml
+requests>=2.32       # ClinicalTrials.gov / PubMed extraction
+pytest>=8.0          # tests

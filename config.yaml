@@ -1,0 +1,41 @@
+# Phase2 — pipeline configuration
+
+database:
+  path: data/processed/phase2.db
+
+paths:
+  raw: data/raw
+  interim: data/interim
+  processed: data/processed
+  reports: reports
+
+# Source cohorts. Historical sets reproduce the reference papers; the update
+# cohort extends them with post-2020 trials. `source_ref` is stamped on every
+# base row so cohorts stay separable.
+sources:
+  - source_ref: kang2013
+    kind: legacy_table          # digitized from BMC Med Res Methodol 13:77
+    phase: [II]
+  - source_ref: azam2021
+    kind: legacy_table          # from Cancers 13:178 supplement
+    phase: [II]
+  - source_ref: update2026
+    kind: clinicaltrials_api    # ClinicalTrials.gov + PubMed extraction
+    phase: [II, III]
+    query:
+      conditions: cancer
+      min_completion_year: 2020
+
+analysis:
+  # synergy / antagonism vs Bliss null
+  significance_alpha: 0.05
+  multiple_testing: bonferroni
+  # ORR estimate confidence interval
+  ci_method: beta_posterior     # beta_posterior | binomial_exact
+  ci_level: 0.95
+  # matched-pair validation
+  matching:
+    require_same_tumor: true
+    require_same_line: true
+    allow_dose_mismatch: true   # same agents, different dose still pairs
+    min_confidence: medium      # high | medium | low
