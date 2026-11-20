@@ -23,6 +23,7 @@ phase2/
 │   ├── interim/          stage-2 output: normalized CSVs (one per base table)
 │   └── processed/        phase2.db lives here
 ├── reports/             cohort stats (*.csv) + figures/
+├── forecasts/           dated Phase III ORR forecasts (forecasts.csv) + forecast.py
 ├── docs/data_schema.md
 ├── src/phase2/
 │   ├── config.py, db.py
