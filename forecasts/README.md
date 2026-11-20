@@ -22,9 +22,12 @@ not anticipate an OS hazard ratio of 0.40: the survival benefit came from diseas
 control, consistent with ORR explaining about a quarter of the variance in median
 survival.
 
-KRAS G12C precedent in second-line NSCLC: sotorasib Phase II 0.37 → Phase III 0.28
-(CodeBreaK 200, PFS HR 0.66, no OS benefit); adagrasib Phase II 0.43 → Phase III 0.32
-(KRYSTAL-12, PFS HR 0.58).
+KRAS G12C precedent in second-line NSCLC: sotorasib Phase II 0.37 (CodeBreaK 100) →
+Phase III 0.28 vs docetaxel 0.13 (CodeBreaK 200, PFS HR 0.66, OS HR 1.01); adagrasib
+Phase II 0.43 (KRYSTAL-1, n = 112) → Phase III 0.32 vs docetaxel 0.09 (KRYSTAL-12,
+PFS HR 0.58, OS immature at the primary analysis). Sources: de Langen et al., Lancet
+2023 (CodeBreaK 200); FDA ODAC briefing, Oct 2023; Barlesi et al., ASCO 2024 and
+Mok et al., Lancet 2024 (KRYSTAL-12); Jänne et al., NEJM 2022 (KRYSTAL-1).
 
 ## F1 — RASolute 303 (recorded 2026-11-20)
 
